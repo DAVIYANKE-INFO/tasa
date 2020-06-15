@@ -1,0 +1,208 @@
+<div fxLayout="row">
+    <div fxFlex="100" fxFlex.lg="99" fxFlex.md="99" fxFlex.sm="90" fxFlex.xs="95" style="margin: 0 auto;padding-top:10px;">
+      <mat-card class="mat-elevation-z2">
+        <mat-card-content>
+            <div>
+                <mat-card class="mat-elevation-z1">
+                    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Nombre de la Cooperativa</mat-label>
+                                <input matInput placeholder="Introduzca la cooperativa...">
+                                <mat-icon matSuffix>person_pin</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Numero de Registro</mat-label>
+                                <input matInput placeholder="Introduzca el registro...">
+                                <mat-icon matSuffix>place</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Outline form field</mat-label>
+                                <input matInput placeholder="Placeholder">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Outline form field</mat-label>
+                                <input matInput placeholder="Placeholder">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+                        
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Outline form field</mat-label>
+                                <input matInput placeholder="Placeholder">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+
+                        <div fxFlex="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Outline form field</mat-label>
+                                <input matInput placeholder="Placeholder">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                                <mat-hint>Hint</mat-hint>
+                              </mat-form-field>
+                        </div>
+                        
+                    </div>
+                    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"  fxLayoutAlign="center center">
+                        <div fxFlex="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <button mat-raised-button color="primary" (click)="aceptar()">BUSCAR</button>
+                        </div>
+                        <div fxFlex="100" fxFlex.lg="100" fxFlex.md="100" fxFlex.sm="100" fxFlex.xs="95" style="margin: 0 auto;text-align:center;">
+                            <button mat-raised-button color="warn"  (click)="cancelar()">LIMPIAR</button>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+
+            <br>
+            <div *ngIf="aparece==true">
+                <mat-card class="mat-elevation-z2" fxFlex="100%" fxFlex.md="30">
+                    <mat-card-subtitle>
+                        DATOS DE LA COOPERATIVA
+                    </mat-card-subtitle>
+                    <mat-card-content>
+                       <h5 id="texto-negrita">DENOMINACIÓN     : {{ aparece }}</h5>
+                       <h5 id="texto-negrita">DEPARTAMENTO     : {{ aparece }}      PROVINCIA:</h5> 
+                       <h5 id="texto-negrita">DOMICILIO LEGAL  : {{ aparece }}</h5>
+                       <h5 id="texto-negrita">NRO. DE TELEFONO : {{ aparece }}</h5>
+                       <h5 id="texto-negrita">NRO. DE CELULAR  : {{ aparece }}</h5>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <br>
+            <div>
+                <mat-card class="mat-elevation-z1" style="text-align:center;">
+                    <mat-card-title>
+                        <h1 style="color:#2979FF;font-weight:normal;">OPCIONES DE FILTRADO</h1>
+                    </mat-card-title>
+                        
+                    <mat-card-content style="text-align:center;">
+                        <mat-tab-group>
+                            <mat-tab label="FILTRADO 1"> 
+                                <mat-card class="mat-elevation-z2" fxFlex="100" fxFlex.md="100">
+                                    <mat-card-content>
+                                        <mat-card class="mat-elevation-z2" fxFlex="90" fxFlex.md="30">
+                                            <mat-card-subtitle>
+                                                SELECCIÓN DEL AÑO
+                                            </mat-card-subtitle>
+                                            <mat-card-content>
+                                                <mat-form-field>
+                                                    <mat-label>Seleccione una gestíón</mat-label>
+                                                    <mat-select>
+                                                    <mat-option *ngFor="let food of foods" (click)="obtieneval(food.viewValue)" [value]="food.value">
+                                                        {{food.viewValue}}
+                                                    </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+
+                                                <button mat-raised-button color="primary" (click)="muestrafiltroanio()">FILTRAR</button>
+
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </mat-card-content>
+                                </mat-card> 
+                            </mat-tab>
+                            <mat-tab label="FILTRADO 2" fxFlex="100" fxFlex.md="100"> 
+                                <mat-card class="mat-elevation-z2" >
+                            
+                                    <mat-card-content>
+        
+                                        <mat-card class="mat-elevation-z2" fxFlex="90" fxFlex.md="30">
+                                            <mat-card-subtitle>
+                                                SELECCIÓN DE RANGO DE AÑOS
+                                            </mat-card-subtitle>
+                                            <mat-card-content>
+                                                <mat-form-field>
+                                                    <mat-label>Seleccione una gestíón</mat-label>
+                                                    <mat-select>
+                                                    <mat-option *ngFor="let ini of rangoinicio" (click)="obtieneval(ini.viewValue)" [value]="ini.value">
+                                                        {{ini.viewValue}}
+                                                    </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                                <mat-form-field>
+                                                    <mat-label>Seleccione una gestíón</mat-label>
+                                                    <mat-select>
+                                                    <mat-option *ngFor="let fin of rangofin" (click)="obtieneval2(fin.viewValue)" [value]="fin.value">
+                                                        {{fin.viewValue}}
+                                                    </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+
+                                                <button mat-raised-button color="primary" (click)="muestrafiltrorangoanio()">FILTRAR</button>
+
+                                            </mat-card-content>
+                                        </mat-card>
+                                    </mat-card-content>
+                                </mat-card>
+                            </mat-tab>
+                            <mat-tab label="FILTRADO 3"> 
+                                FILTRADO 3 
+                            </mat-tab>
+                          </mat-tab-group>
+
+                    </mat-card-content> 
+
+                        <mat-card-content>
+                            <div>
+                                <div *ngFor="let item of listas;let indice=index">
+                                    <div fxLayout="column" fxLayoutAlign="center center">
+                                        
+                                            <div>
+                                                <mat-card fxLayout="column">
+                                                    <mat-card-subtitle>
+                                                        <h3>{{ indice+1 }} {{item["año"]}}</h3>
+                                                    </mat-card-subtitle>
+                                                    <mat-card-content style="text-align:left;" fxLayoutGap="10px" fxLayout="row wrap" fxLayout.xs="column" >
+                                                        <div *ngFor="let items of item['meses'];let i = index;">
+                                                            <mat-checkbox [checked]="items.checked" (change)="onChange($event, i, items)" color="primary" style="font-size:13px;">{{items["mes"]}}</mat-checkbox> 
+                                                        </div>
+                                                        <br>
+
+                                                     <!-- <strong>Last action:</strong> {{lastAction || 'untouched' }}
+                                                      <h4>JSON data:</h4>
+                                                      <pre>
+                                                      {{item['meses'] | json}}
+                                                      </pre>-->
+                                                      
+                                                    </mat-card-content>
+                                                      <br>
+
+                                                      <div fxLayout fxLayoutAlign="center" fxLayoutGap="10px">
+                                                        <button color="primary" mat-raised-button>ENVIAR</button>
+                                                        <button color="warn" mat-raised-button>SALIR</button>
+                                                    </div>
+
+                                                </mat-card><br>
+                                            </div>
+                                            
+                                            
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    
+                </mat-card>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+</div>

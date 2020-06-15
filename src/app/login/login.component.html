@@ -1,0 +1,48 @@
+<div fxLayout="row"  fxLayoutAlign="center center" style="text-align:center;">
+  <div fxFlex="50" fxFlex.lg="25" fxFlex.md="40" fxFlex.sm="50" fxFlex.xs="95" style="margin: 0 auto;padding-top:100px;">
+    <mat-card class="mat-elevation-z15" style="background-color:#2979FF;">
+        <div>
+            <div fxLayoutAlign="center center">
+              <img src="assets/afcoop2020.png" width="300" height="150">
+            </div>
+            <strong style="color:white;text-align: center; display: block; font-size: 22px; margin-top: 10px ; font-weight:normal;" >Sistema de Tasa de Regulación</strong><br>
+        </div>
+        <div fxLayout="column">
+            <mat-card class="mat-elevation-z5">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Usuario</mat-label>
+                        <input matInput placeholder="Usuario">
+                        <span matPrefix><mat-icon color="primary">person</mat-icon></span>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Contraseña</mat-label>
+                      <input matInput placeholder="Contraseña">
+                      <span matPrefix><mat-icon color="primary">lock</mat-icon></span>
+                </mat-form-field>
+            
+              <!--  <mat-form-field appearance="outline">
+                    <mat-label>Contraseña</mat-label>
+                    <input matInput [type]="mostrarPassword? 'text' : 'password'" placeholder="Contraseña">
+                    <mat-icon mat-icon-button matSuffix (click)="mostrarPassword = !mostrarPassword" color="primary" style="cursor: pointer;">{{mostrarPassword? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <span matPrefix><mat-icon>lock</mat-icon></span>
+                </mat-form-field>-->
+
+                <div>
+                  <button mat-raised-button color="primary" (click)="ingresar()">INGRESAR</button>
+                </div>
+           
+            </mat-card>
+  
+        </div>
+    </mat-card>
+  </div>
+  <button color="primary" mat-fab aria-label="Example icon-button with a heart icon">
+    <a href="http://localhost:8080">
+    <mat-icon style="color:white;">
+      home
+    </mat-icon>
+  </a>  
+  </button>
+</div>
